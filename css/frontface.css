@@ -1,0 +1,27 @@
+/* CSS for FRONTFACE on everything thats not an mobile device */
+
+/* zero tags */
+margin: 0;
+padding: 0;
+
+/* structure */
+body {
+	background: #000;
+	font-family: Arial, Verdana;
+	color: #fff;
+	font-size: 12px;
+}
+
+h1 {
+	color: #fff;
+	font-weight: bold;
+	font-size: 24px;
+}
+h3 {
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+}
+p {
+	color: #fff;
+}
