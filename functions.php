@@ -10,7 +10,7 @@
 				echo '<td><img src=" images/'.$r['sID'].'.png "></td>';
 				echo '<td><p>'.$r['datum'].'</p><h3>'.$r['rubrik'].'</h3><p>'.$r['nyhet'].'</p></td>';
 				echo "</tr></table>";
-				echo '<p><br /></p>';
+				echo "<p><br /></p>";
 				}
 			}
 ?>
@@ -45,5 +45,17 @@ function htmlstartmobil()
 <body>"; }
 
 ?>
-
 <?php function htmlend() { echo "</body></html>"; } ?>
+
+<?php
+	function tinyMCE() {
+		echo '
+		<script type="text/javascript" src="jscripts/tiny_mce/tiny_mce.js"></script>
+		<script type="text/javascript">
+			tinyMCE.init({
+				theme : "simple",
+				mode : "textareas"
+			});
+		</script>';
+	}
+?>
