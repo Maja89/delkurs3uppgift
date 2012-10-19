@@ -1,0 +1,61 @@
+/* ADMIN CSS */
+
+body {
+	background: #200020 url(../images/bgadmin.png);
+	font-family: Arial, Verdana;
+	font-size: 12px;
+	color: #FFF;
+}
+#nyhetsbox {
+	border: 1px solid #000;
+	background: #E8E8E8;
+	color: #000;
+	width: 400px;
+	height: 350px;
+	padding: 10px;
+	position: absolute;
+	left: 400px;
+	top: 100px;
+	overflow: auto;
+}
+
+#nyhetsbox hr {
+	border: 1px dotted #000;
+}
+
+#green { color: #37873f; }
+#red { color: #F00; }
+
+#wrapper {
+	width: 100%;
+	margin: 20px auto;
+}
+
+#menu form {
+	text-decoration: none;
+}
+
+#content h3 {
+	padding-left: 10px;
+	line-height: 20px;
+	color: #000;
+	background: #CCC;
+}
+
+#content form fieldset {
+	width: 60%;
+	border: 2px solid #999;
+	background: #DDD;
+	color: #000;
+}
+
+#content form fieldset label {
+	font-size: 12px;
+	font-weight: bolder;
+}
+
+.knapp {
+	background: #333;
+	color: #FFF;
+	border: 1px dotted #cc0000;
+}

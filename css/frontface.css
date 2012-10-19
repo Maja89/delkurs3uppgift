@@ -1,27 +1,29 @@
 /* CSS for FRONTFACE on everything thats not an mobile device */
 
-/* zero tags */
-margin: 0;
-padding: 0;
-
-/* structure */
 body {
-	background: #000 url(..images/bg.png);
+	background: #200020 url(../images/bgadmin.png);
 	font-family: Arial, Verdana;
 	color: #fff;
 	font-size: 12px;
 }
 
 h1 {
-	color: #fff;
+	color: #000;
 	font-weight: bold;
 	font-size: 24px;
 }
 h3 {
-	color: #fff;
+	color: #000;
 	font-weight: bold;
 	font-size: 14px;
 }
 p {
-	color: #fff;
+	color: #000;
+}
+
+#wrapper {
+	width: 900px;
+	margin: 30px auto;
+	background: #FFF;
+	color: #000;
 }

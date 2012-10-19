@@ -5,16 +5,25 @@ $sec = "10";
 header("Refresh: $sec; url=$page");
 ?>
 <?php
-include('user_agent.php'); // Redirecting mobile to a more userfriendly site.
-include('functions.php'); // Needed for some functions on the site.
-include('pref.php');	// preferenses for the site.
+include('mobile-functions.php'); // Needed for some functions on the site.
+include('../pref.php');	// preferenses for the site.
 ?>
-<?php htmlstartmobil(); ?>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+	<meta name='keywords' content='blog, blogg, dan paulsson, php, malmö'>
+	<meta name='description' content='Inlämningsuppgift Blogg - PHP-utvecklare Malmö'>
+	<link href='../css/mobile.css' rel='stylesheet' type='text/css'>
+	<title>DRIFTINFO</title>							
+	</head>
+<body>
 
 <div id="wrapper">
 	<div id="header"><h1><?php echo $title; ?></h1></div>
 	<div id="content"><p><?php writePost(); ?> <!-- Skriver ut alla inlägg --></p></div>
 	<div id="footer"><p><?php echo $footer; ?></p></div> 
 </div>
-
-<?php htmlend(); ?>
+</body>
+</html>

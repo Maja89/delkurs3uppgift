@@ -7,7 +7,7 @@
 				while ($r = mysql_fetch_array($strQuery))
 				{
 				echo "<table><tr>";
-				echo '<td><img src=" images/'.$r['sID'].'.png "></td>';
+				echo '<td><img src=" images/'.$r['sID'].'.jpg "></td>';
 				echo '<td><p>'.$r['datum'].'</p><h3>'.$r['rubrik'].'</h3><p>'.$r['nyhet'].'</p></td>';
 				echo "</tr></table>";
 				echo "<p><br /></p>";
@@ -28,22 +28,6 @@
 	<title>$title</title>							
 	</head>
 <body>"; }
-
-function htmlstartmobil()
-		{
-			include("pref.php");
-			echo "<!DOCTYPE html>
-<html>
-	<head>
-	<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
-	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-	<meta name='keywords' content='blog, blogg, dan paulsson, php, malmö'>
-	<meta name='description' content='Inlämningsuppgift Blogg - PHP-utvecklare Malmö'>
-	<link href='../css/mobile.css' rel='stylesheet' type='text/css'>
-	<title>$title</title>							
-	</head>
-<body>"; }
-
 ?>
 <?php function htmlend() { echo "</body></html>"; } ?>
 
