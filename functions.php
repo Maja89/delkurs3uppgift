@@ -7,7 +7,7 @@
 				while ($r = mysql_fetch_array($strQuery))
 				{
 				echo "<table><tr>";
-				echo '<td><img src=" images/'.$r['sID'].'.jpg "></td>';
+				echo '<td><img src="images/'.$r['sID'].'.png"></td>';
 				echo '<td><p>'.$r['datum'].'</p><h3>'.$r['rubrik'].'</h3><p>'.$r['nyhet'].'</p></td>';
 				echo "</tr></table>";
 				echo "<p><br /></p>";
@@ -24,7 +24,8 @@
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 	<meta name='keywords' content='blog, blogg, dan paulsson, php, malmö'>
 	<meta name='description' content='Inlämningsuppgift Blogg - PHP-utvecklare Malmö'>
-	<link href='css/frontface.css' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+	<link href='css/frontface.css' rel='stylesheet' type='text/css' media='screen'>
 	<title>$title</title>							
 	</head>
 <body>"; }
