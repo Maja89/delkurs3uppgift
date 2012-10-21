@@ -65,7 +65,8 @@ if (!isset($_SESSION['sess_user'])){
 									<p><input class="knapp" type="submit" name="submit" value="Ändra status"></p>
 			  						</form></div>';
 			  				if(isset($_POST['submit'])) {
-								$strQuery = mysql_query("UPDATE nyheter SET sid = 'solved' WHERE nyhetid = ".$r['nyhetid']."") or exit(mysql_error());
+			  					$nyhetid = $r['nyhetid'];
+								$strQuery = mysql_query("UPDATE nyheter SET sid = 'solved' WHERE nyhetid = $nyhetid") or exit(mysql_error());
 							}
 						} 
 					}

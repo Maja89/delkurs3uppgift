@@ -6,11 +6,15 @@
 				$strQuery = mysql_query("SELECT n.rubrik, n.nyhet, n.datum, s.image, n.sID FROM nyheter n INNER JOIN status s ON s.sid = n.sid ORDER by datum DESC LIMIT 5") or exit(mysql_error());
 				while ($r = mysql_fetch_array($strQuery))
 				{
+				if (!$r['rubrik']) {
+					echo "<strong>Inga poster att visa, allt fungerar.</strong>";
+				} else {
 				echo "<table><tr>";
 				echo '<td><img src="images/'.$r['sID'].'.png"></td>';
 				echo '<td><p>'.$r['datum'].'</p><h3>'.$r['rubrik'].'</h3><p>'.$r['nyhet'].'</p></td>';
 				echo "</tr></table>";
 				echo "<p><br /></p>";
+				}
 				}
 			}
 ?>
