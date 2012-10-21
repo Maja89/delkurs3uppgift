@@ -60,13 +60,14 @@ if (!isset($_SESSION['sess_user'])){
 						echo '<div class="post">';
 						echo '<p id="red">' . $r['datum'] . '<br />' . $r['rubrik'] . '</p>';
 						if ($r['sID'] == ('unsolved')) {
-							echo '<form name="status" method="post" action="start_status.php">
+							echo '<form name="status" method="post" action="">
 									<input type="hidden" name="status" value="' . $r['nyhetid'] . '">
 									<p><input class="knapp" type="submit" name="submit" value="Ändra status"></p>
 			  						</form></div>';
-					} else {
-						echo '';
-					}
+			  				if(isset($_POST['submit'])) {
+								$strQuery = mysql_query("UPDATE nyheter SET sid = 'solved' WHERE nyhetid = ".$r['nyhetid']."") or exit(mysql_error());
+							}
+						} 
 					}
 				}
 			?>

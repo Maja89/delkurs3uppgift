@@ -1,5 +1,5 @@
 <?php
-session_start(); // Check session
+//session_start(); // Check session
 /* PREF */
 $title = "Administartion - Driftinfo";
 /* END PREF */

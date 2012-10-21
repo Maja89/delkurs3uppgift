@@ -1,10 +1,10 @@
-<?php 
+<?php /*
 session_start();
 if (!isset($_SESSION['sess_user'])){ 
   header("Location: index.php"); 
   exit; 
 }
-include ('jscripts/conn.php');
+include ('jscripts/conn.php'); */
 ?>
 
 <html>
@@ -17,24 +17,24 @@ include ('jscripts/conn.php');
 		<h2>Ändra status</h2>
 		<?PHP						// Change status on post
 			require_once "jscripts/conn.php";
-			$strQuery = mysql_query("SELECT nyhetid, rubrik, sid FROM nyheter WHERE nyhetid = '" . $_POST['status'] . "'") or exit(mysql_error());
+			$strQuery = mysql_query("SELECT nyhetid, rubrik, sid FROM nyheter WHERE nyhetid = '" . $_POST['nyhetid'] . "'") or exit(mysql_error());
 			while ($r = mysql_fetch_array($strQuery)) {
 				echo '<form name="redigera_status" method="post" action="">
 			<p>Rubrik: ' . $r['rubrik'] . '</p>
 			<p>Vald status:  <strong>' . $r['sid'] . '</strong></p>
 			<input type="hidden" name="sid" value="' . $_POST['submit'] . '">
-			<p><input class="knapp" type="submit" name="solved" value="Ändra till SOLVED"></p>';
+			<p><input type="submit" name="solved" value="Ändra till SOLVED"></p>';
 			}
 			
 			?>
 	</body>
 </html>
 <?php
-if(isset($_POST['sid'])) {
+if(isset($_POST['submit'])) {
 	include "jscripts/conn.php";
 	$strQuery = mysql_query("UPDATE nyheter 
 		SET sid = '" . $_POST['sid'] ."' 
-		WHERE nyhetid = ".$_POST['radera']."") 
+		WHERE nyhetid = ".$_POST['nyhetid']."") 
 	or exit(mysql_error());
 }
 

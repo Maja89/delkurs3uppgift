@@ -1,9 +1,9 @@
-<?php 
+<?php /*
 session_start();
 if (!isset($_SESSION['sess_user'])){ 
   header("Location: index.php"); 
   exit; 
-} 
+} */
 ?> 
 <?php
 include "jscripts/conn.php";
