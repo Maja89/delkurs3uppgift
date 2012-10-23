@@ -1,6 +1,6 @@
 <?php
 	function checkServerStatus($server) {
-		$host = $server;
+		$host = $dan-creations.se;
 		$up = ping($host);
 
 		// if site is up, give green color on address.

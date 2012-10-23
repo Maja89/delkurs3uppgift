@@ -1,18 +1,18 @@
-<?php 
+<?php /*
 session_start(); // Alltid överst på sidan 
 
 // Check if user set = if not redirect
 if (!isset($_SESSION['sess_user'])){ 
   header("Location: index.php"); 
   exit; 
-}
+} */
  
-include "conn.php"; // Databaseconnection 
+include "jscripts/conn.php"; // Databaseconnection 
  
-if (isset($_POST['submit'])){ 
+if (isset($_POST['submit'])) { 
  
   // Erase any blanks before/after
-  foreach($_POST as $key => $val){ 
+  foreach($_POST as $key => $val) { 
     $_POST[$key] = trim($val); 
   } 
  
@@ -30,13 +30,12 @@ if (isset($_POST['submit'])){
   
   // No errors? Check and Save and redirect to start.php
   if (!isset($reg_error)) { 
-    $sql = "INSERT INTO members (user, pass) 
-            VALUES('{$_POST['user']}', '{$_POST['passwd']}')"; 
+    $sql = "INSERT INTO members (user, pass) VALUES('{$_POST['user']}', '{$_POST['passwd']}')"; 
     mysql_query($sql); 
     
     $_SESSION['sess_id'] = mysql_insert_id(); 
     $_SESSION['sess_user'] = $_POST['user']; 
-    header("Location: index.php"); 
+    header("Location: start.php"); 
     exit;      
   
   } 
@@ -50,9 +49,8 @@ if (isset($_POST['submit'])){
  
 } 
  
-$error_list[0] = "Alla fält är inte infyllda"; 
-$error_list[1] = "Användarnamnet är upptaget"; 
-$error_list[2] = "Felaktig e-postadress"; 
+$error_list[0] = "You have not filled in every fields"; 
+$error_list[1] = "Username is ocupied"; 
  
 ?> 
 <!DOCTYPE HTML> 
@@ -60,14 +58,16 @@ $error_list[2] = "Felaktig e-postadress";
 	<head> 
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
 		<title>Registrera dig</title> 
-		<link href="admin.css" rel="stylesheet" type="text/css">
+		<link href="../css/admin.css" rel="stylesheet" type="text/css">
 	</head> 
 	<body>
-	<div id="wrap">
-			<?php 						// Meddela om du inte fyllt i alla fält och om något är fel
+	<div id="wrapper">
+		<div id="page">
+			<div class="post">
+			<?php 						// Report if you not filled in every fields
 				if (isset($reg_error)){ 
  
-					echo "Något blev fel:<br>\n"; 
+					echo "Something went wrong:<br>\n"; 
 					echo "<ul>\n"; 
 					for ($i=0; $i<sizeof($reg_error); $i++) { 
 						echo "<li>{$error_list[$reg_error[$i]]}</li>\n"; 
@@ -77,18 +77,19 @@ $error_list[2] = "Felaktig e-postadress";
 				$back[0] = $_POST['user']; 
 				$back[1] = $_POST['pass']; 
 				} 
-			?> <!-- Formulär för att fylla i nya uppgifter för ny inloggning -->
-		<p><a href="start.php" style=" text-decoration:blink; padding-left: 20px;">Tillbaka till index</a></p>
+			?> <!-- Form for filling out new user -->
+			<h1>Create a user for SSRS</h1>
 		<hr>
-
-		<div id="bytpass">
+			<p>Please fill in both fields</p>
 			<form action="register.php" method="post"> 
-				<p>Användarnamn:<br />
+				<p>Username:<br />
 					<input name="user" type="text" value="<?=$back[0] ?>" size="35" class="form"></p>
-				<p>Lösenord:<br />
+				<p>Password:<br />
 					<input name="pass" type="text" value="<?=$back[1] ?>" size="35" class="form"></p>
-				<p><input type="submit" name="submit" value="Spara dina uppgifter" class="knapp"></p>
+				<p><input type="submit" name="submit" value="Save your stuff"></p>
 			</form>
+			<p><a href="start.php">Back to start</a></p>
+			</div>
 		</div>
 	</div>
 	</body>

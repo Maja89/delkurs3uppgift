@@ -13,7 +13,7 @@ if (!isset($_SESSION['sess_user'])){
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Administration - Driftinfo</title>
+		<title>Administration - SSRS</title>
 		<link rel="stylesheet" href="../css/frontface.css" type="text/css" media="screen">
 		<?php tinyMCE(); ?>
 	</head>
@@ -21,26 +21,26 @@ if (!isset($_SESSION['sess_user'])){
 	<div id="wrapper">
     	<div id="menu">
         	<ul>
-            	<li><a href="loggedout.php">Logga ut</a></li>
+            	<li><a href="loggedout.php">Logout</a></li>
             </ul>
         </div>
     	<div id="header">
-        	<div id="logo"><h1>Administration - driftinfo</h1></div>
+        	<div id="logo"><h1>Administration - server status report system</h1></div>
         </div>
 		<div id="page">
         	<div class="post">
 				<form method="post" action="start_lagra.php">
-						<h3>Lägg till händelser</h3>
+						<h3>New SSRS posts</h3>
 						<p><label>Status</label><br />
 								<select name="sid">
 									<option value="unsolved">Unsolved</option>
 									<option value="solved">Solved</option>
 								</select></p>
-						<p><label>Rubrik</label><br />
+						<p><label>Header</label><br />
 								<input type="text" name="rubrik" size="50"></p>
-						<p><label>Händelse</label><br />
+						<p><label>SSRS Post</label><br />
 								<textarea name="nyhet" rows="15" cols="39"></textarea></p>
-						<p><input type="submit" name="submit" value="Spara händelse"></p>
+						<p><input type="submit" name="submit" value="Save post"></p>
 				</form>
             </div>
             <?php 			// get database post
