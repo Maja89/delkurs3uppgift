@@ -21,7 +21,7 @@ include('../pref.php');	// preferenses for the site.
 <body>
 
 <div id="wrapper">
-	<div id="header"><h1><?php echo $title; ?></h1></div>
+	<div id="header"><h1><u><?php echo $title; ?></u></h1></div>
 	<div id="content"><p><?php writePost(); ?> <!-- Skriver ut alla inlägg --></p></div>
 	<div id="footer"><p><?php echo $footer; ?></p></div> 
 </div>

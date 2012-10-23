@@ -1,9 +1,4 @@
 ﻿<?php
-$page = $_SERVER['PHP_SELF'];	// Doing a update of the page to check for new messages
-$sec = "30";
-header("Refresh: $sec; url=$page");
-?>
-<?php
 include('user_agent.php'); // Redirecting mobile to a more userfriendly site.
 include('functions.php'); // Needed for some functions on the site.
 include('pref.php');	// preferenses for the site.

@@ -1,10 +1,10 @@
-<?php /*
+<?php
 session_start(); // Set session cookie 
 // Check if logged in - session set 
 if (!isset($_SESSION['sess_user'])){ 
   header("Location: index.php"); 
   exit; 
-} */
+} 
 ?>
 <?php
 	include 'jscripts/conn.php';

@@ -14,7 +14,7 @@ include('pref.php');	// preferenses for the site.
     	<li><a href="index.php">Home</a></li>
 		<li><a href="about.php">About project</a></li>
         <li><a href="driftadmin/">Admin</a></li>
-        <li><a href="createpdf.php">skapa en pdf av sidan</a></li>
+        <li><a href="createpdf.php">Create a pdf</a></li>
     </ul></div>
 	<div id="header">
     	<div id="logo">

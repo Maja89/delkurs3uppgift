@@ -1,43 +1,28 @@
 <?php
-//session_start(); // Check session
+session_start(); // Check session
 /* PREF */
 $title = "Administartion - Driftinfo";
 /* END PREF */
 include "jscripts/conn.php"; // Databaseconn
 // Login
-if (isset($_POST['loggain'])){
-	$sql = "SELECT userid FROM members WHERE user='{$_POST['user']}' AND pass='{$_POST['pass']}'";
-	$result = mysql_query($sql);
-	if ($r = mysql_fetch_array($result))
-{
-	$salt = substr($r['pass'], 0, 64);
-	$hash = $salt . $pass; 
-	for ( $i = 0; $i < 100000; $i ++ ) {
-  		$hash = hash('sha256', $hash);
-	}
-} else {
-	// Missing user or pass
-			if (mysql_num_rows($result) == 0){
-				header("Location: index.php?badlogin");
-    		exit;
-  		}
-}
+if (isset($_POST['loggain'])) {
 
-if ($salt.$hash == $r['pass'] )
-	{
-  		// Set user with unic index and login
-  		$_SESSION['sess_id'] = mysql_result($result, 0, 'userid');
-  		$_SESSION['sess_user'] = $_POST['user']; 
-  		setcookie("user", $_POST['user']);
-  		header("Location: start.php");
-  		exit;	
-	} else {
-		// Missing user or pass
-			if (mysql_num_rows($result) == 0){
-				header("Location: index.php?badlogin");
-    		exit;
-  		}
-	}
+  $sql = "SELECT userid FROM members WHERE user='{$_POST['user']}' AND pass='{$_POST['pass']}'";
+  $result = mysql_query($sql);
+
+  // MIssing user/pass
+  // send to form with error mess
+  if (mysql_num_rows($result) == 0){
+    header("Location: index.php?badlogin");
+    exit;
+  }
+
+// Set session with unic id
+  $_SESSION['sess_id'] = mysql_result($result, 0, 'id');
+  $_SESSION['sess_user'] = $_POST['user']; 
+  setcookie("user", $_POST['user']);
+  header("Location: start.php");
+  exit;
 }
 ?>
 <!DOCTYPE HTML>
@@ -57,7 +42,7 @@ if ($salt.$hash == $r['pass'] )
 			  <p><a href="../index.php">Gå till besökargränssnittet</a> eller logga in igen:</p>';
 			}		
 			?> 
-			<h1 class="h1index">Inloggning f&ouml;r admin:</h1>
+			<h1>Inloggning f&ouml;r admin:</h1>
 			<?php
 			
 			// Error at login
