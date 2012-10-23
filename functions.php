@@ -30,6 +30,7 @@
 	<meta name='description' content='Inlämningsuppgift Blogg - PHP-utvecklare Malmö'>
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
 	<link href='css/frontface.css' rel='stylesheet' type='text/css' media='screen'>
+	<link type='text/css' rel='stylesheet' href='css/print.css' media='print'>
 	<title>$title</title>							
 	</head>
 <body>"; }
