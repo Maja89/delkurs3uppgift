@@ -18,12 +18,17 @@ include('pref.php');	// preferenses for the site.
     </ul></div>
 	<div id="header">
     	<div id="logo">
-    		<h1><?php echo $title; ?></h1>
+    		<h1>About - <?php echo $title; ?></h1>
         </div>
     </div>
 	<div id="page">
     	<div class="post">
-    		<p><?php writePost(); ?> </p> <!-- Write all post from database -->
+    		<p><strong>English</strong></p>
+				<p>This project was ment to be a server status site with messages telling what status you got on a specified server. But I had some real issues to get it work and wherefor 
+				i don't have the ping server function right now. But if you want to develop it further just go a head.</p>
+			<p><strong>Svenska</strong></p>
+				<p>Det var tänkt att detta projekt skulle innehålla en server status funktion där man skulle få meddelande om att en server ligger nere eller om den är uppe. Men jag har haft
+				problem med ping funktionen så har lagt det på hyllan så länge. Men utvecklingsmöjligheten finns där.</p>
 		</div>
 	</div>
     <div id="page">
