@@ -1,6 +1,7 @@
 ﻿<!-- PREFERENS FILE -->
 <?php
-	$title = "Driftinfo";
+	$title = "Server SRS";
+	$mobiletitle = "Mobile SSRS";
 	$footer = "&copy; 2012 - Dan Paulsson - PHP-utvecklare Malmö";
 	
 ?>

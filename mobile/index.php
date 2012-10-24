@@ -16,12 +16,12 @@ include('../pref.php');	// preferenses for the site.
 	<meta name='keywords' content='blog, blogg, dan paulsson, php, malmö'>
 	<meta name='description' content='Inlämningsuppgift Blogg - PHP-utvecklare Malmö'>
 	<link href='../css/mobile.css' rel='stylesheet' type='text/css'>
-	<title>DRIFTINFO</title>							
+	<title>Mobile SSRS</title>							
 	</head>
 <body>
 
 <div id="wrapper">
-	<div id="header"><h1><u><?php echo $title; ?></u></h1></div>
+	<div id="header"><h1><u><?php echo $mobiletitle; ?></u></h1></div>
 	<div id="content"><p><?php writePost(); ?> <!-- Skriver ut alla inlägg --></p></div>
 	<div id="footer"><p><?php echo $footer; ?></p></div> 
 </div>
