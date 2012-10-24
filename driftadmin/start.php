@@ -25,7 +25,7 @@ if (!isset($_SESSION['sess_user'])){
             </ul>
         </div>
     	<div id="header">
-        	<div id="logo"><h1>Administration - server status report system</h1></div>
+        	<div id="logo"><h1>Administration - SSRS</h1></div>
         </div>
 		<div id="page">
         	<div class="post">
@@ -45,6 +45,12 @@ if (!isset($_SESSION['sess_user'])){
             </div>
             <?php 			// get database post
 				include ('jscripts/conn.php');
+				
+				if(isset($_POST['update'])) {
+			  					$nyhetid =  (int) $_POST['status'];
+								$strQuery = mysql_query("UPDATE nyheter SET sid = 'solved' WHERE nyhetid = $nyhetid") or exit(mysql_error());
+							}
+				
 				$Query = mysql_query("SELECT nyhetid, rubrik, nyhet, datum, sID FROM nyheter ORDER by datum DESC LIMIT 15") or exit(mysql_error());
 				while ($r = mysql_fetch_array($Query))
 				{										// check, if status solved, show in green and with a delete button
@@ -62,12 +68,10 @@ if (!isset($_SESSION['sess_user'])){
 						if ($r['sID'] == ('unsolved')) {
 							echo '<form name="status" method="post" action="">
 									<input type="hidden" name="status" value="' . $r['nyhetid'] . '">
+									<input type="hidden" name="update" value="update">
 									<p><input class="knapp" type="submit" name="submit" value="Ändra status"></p>
 			  						</form></div>';
-			  				if(isset($_POST['submit'])) {
-			  					$nyhetid = $r['nyhetid'];
-								$strQuery = mysql_query("UPDATE nyheter SET sid = 'solved' WHERE nyhetid = $nyhetid") or exit(mysql_error());
-							}
+			  				
 						} 
 					}
 				}

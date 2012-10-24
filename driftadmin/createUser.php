@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
   
   // No errors? Check and Save and redirect to start.php
   if (!isset($reg_error)) { 
-    $sql = "INSERT INTO members (user, pass) VALUES ('{$_POST['user']}', '{$_POST['passwd']}')"; 
+    $sql = "INSERT INTO members (user, pass) VALUES ('{$_POST['user']}', '{$_POST['pass']}')"; 
     mysql_query($sql); 
     
     $_SESSION['sess_id'] = mysql_insert_id(); 
