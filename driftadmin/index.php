@@ -63,7 +63,7 @@ if (isset($_POST['loggain'])) {
 						<input name="pass" type="password"></p>
 					<p><input type="submit" name="loggain" value="Logga in"></p>
 				</form>
-				<p><a href="createUser.php">Create new user</a></p>
+				<p><a href="createUser.php">Create new user</a> || <a href="../">Back to start</a></p>
 			</div>
 		</div>
 		<div id="page">

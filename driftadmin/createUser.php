@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
   
   // No errors? Check and Save and redirect to start.php
   if (!isset($reg_error)) { 
-    $sql = "INSERT INTO members (user, pass) VALUES('{$_POST['user']}', '{$_POST['passwd']}')"; 
+    $sql = "INSERT INTO members (user, pass) VALUES ('{$_POST['user']}', '{$_POST['passwd']}')"; 
     mysql_query($sql); 
     
     $_SESSION['sess_id'] = mysql_insert_id(); 
@@ -81,7 +81,7 @@ $error_list[1] = "Username is ocupied";
 			<h1>Create a user for SSRS</h1>
 		<hr>
 			<p>Please fill in both fields</p>
-			<form action="register.php" method="post"> 
+			<form action="createUser.php" method="post"> 
 				<p>Username:<br />
 					<input name="user" type="text" value="<?=$back[0] ?>" size="35" class="form"></p>
 				<p>Password:<br />
