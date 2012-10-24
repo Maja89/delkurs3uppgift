@@ -10,7 +10,7 @@ try
     $pdf = $client->convertURI('http://www.dan-creations.se/delkurs3uppgift/');
 
     // use Print css file for output
-    $pdf = $client->usePrintMedia(True);
+    //$pdf = $client->usePrintMedia(True);
 
     // set HTTP response headers
     header("Content-Type: application/pdf");

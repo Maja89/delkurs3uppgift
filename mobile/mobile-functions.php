@@ -7,9 +7,9 @@
 				while ($r = mysql_fetch_array($strQuery))
 				{
 					if ($r['sID'] == ('solved')) {
-						echo '<span id="green"><p>'.$r['datum'].'</p><h3>'.$r['rubrik'].'</h3><p>'.$r['nyhet'].'</p></span>';
+						echo '<p>SOLVED ISSUE: '.$r['datum'].'</p><h3>'.$r['rubrik'].'</h3><p>'.$r['nyhet'].'</p>';
 					} else {
-						echo '<span id="red"><p>'.$r['datum'].'</p><h3>'.$r['rubrik'].'</h3><p>'.$r['nyhet'].'</p></span>';
+						echo '<p>UNSOLVED ISSUE: '.$r['datum'].'</p><h3>'.$r['rubrik'].'</h3><p>'.$r['nyhet'].'</p>';
 					}
 				echo "<hr><br />";
 				}
